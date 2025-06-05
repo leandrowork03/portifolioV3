@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 50px;
+  height: 10px;
+  background: cyan;
+  transform: translate(-50%, -50%) rotate(45deg);
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 2px;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+.typewriter {
+  font-size: 1.2rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+.star {
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+  animation-name: subirEstrelas;
+  animation-duration: 0.1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.typewriter,
+.typewriter2 {
+  font-size: 1.2rem;
+  color: #86ff04;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #86ff04;
+  width: 0;
+  font-family: 'Orbitron', sans-serif;
+  flex-wrap: wrap;
+  animation: typing 3s steps(30, end) forwards;
+}
+
+.typewriter.blinking {
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #86ff04;
+  }
+}
+
+.glow-border2 {
+  width: 250px;
+  border: 3px solid #0ff;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 0 20px #0ff;
+  animation: pulseGlow 2s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
+    border-color: #0ff;
+  }
+  50% {
+    box-shadow: 0 0 40px #0ff, 0 0 80px #0ff;
+    border-color: #66ffff;
+  }
+}
+
+.layer1 { opacity: 0.3; z-index: -4; }
+.layer2 { opacity: 0.5; z-index: -3; }
+.layer3 { opacity: 0.7; z-index: -2; }
+.layer4 { opacity: 1; z-index: -1; }
+
+@keyframes subirEstrelas {
+  from { transform: translate(0, 0); }
+  to { transform: translate(0, 100vh); }
+}
+
+@keyframes zigzag {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(10px); }
+}
+
+.tec {
+  background-color: rgb(59, 63, 63);
+  color: #0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Orbitron', sans-serif;
+  border-radius: 0 35px 0 0;
+  width: 130px;
+  height: 150px;
+  border-bottom: 5px solid #0ff;
+}
+
+.welcome-text {
+  color: #00ffff;
+  font-size: 5rem;
+}
+
+/* Responsividade do texto de boas-vindas */
+.welcome-animation-text {
+  font-size: 5rem;
+}
+@media (max-width: 768px) {
+  .welcome-animation-text {
+    font-size: 2.5rem !important;
+  }
+  .welcome-text {
+  
+  font-size: 11px;
+}
+}
+
+/* Responsividade geral */
+@media (max-width: 1000px) {
+  .sec1 {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5px;
+  }
+  .typewriter {
+    font-size: 1rem;
+    white-space: normal;
+    word-wrap: break-word;
+    width: auto;
+    animation: none;
+  }
+  .welcome-text {
+    color: #00ffff;
+    font-size: 5rem;
+  }
+}
+@media (max-width: 600px) {
+  .welcome-text {
+    font-size: 1rem; /* Bem menor no celular */
+  }
+}
