@@ -11,6 +11,7 @@ import animeZ from "./assets/cap1.png";
 import deep2 from "./assets/deep.png";
 import cap2 from "./assets/cap2.png";
 import ovini from "./assets/ovini.png";
+import cap3 from './assets/cap3.png'
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
@@ -410,11 +411,12 @@ export default function App() {
                       },
                       {
                         title: "Painel Financeiro",
+                        image: cap3,
                         teaser:
                           "Dashboard com cálculo de saldo, receitas e despesas.",
                         description:
                           "Sistema financeiro em JavaScript puro com localStorage. Permite adicionar, excluir e listar transações financeiras. Cálculo automático de saldo, receitas e despesas com layout limpo e responsivo.",
-                        link: "#",
+                        link: "https://controle-de-gastosf.netlify.app/",
                       },
                     ].map((project, index) => (
                       <div
