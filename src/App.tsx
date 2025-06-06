@@ -65,7 +65,7 @@ const sectionVariants = {
 
 type Project = {
   title: string;
-  image: string;
+  image?: string;
   teaser: string;
   description: string;
   link: string;
