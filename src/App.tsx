@@ -65,7 +65,7 @@ const sectionVariants = {
 
 type Project = {
   title: string;
-  image?: string;
+  image: string;
   teaser: string;
   description: string;
   link: string;
@@ -251,7 +251,7 @@ export default function App() {
                                 onMouseEnter={(e) => {
                                   e.currentTarget.style.background =
                                     "rgba(0, 255, 255, 0.2)";
-                                  e.currentTarget.style.color = "#000"; // ou branco se quiser inverter
+                                  e.currentTarget.style.color = "#000";
                                 }}
                                 onMouseLeave={(e) => {
                                   e.currentTarget.style.background =
@@ -273,7 +273,7 @@ export default function App() {
 
               <StarBackground />
 
-              {/* Sessão 1 - Apresentação */}
+ 
               <motion.section
                 id="home"
                 key="section1"
@@ -323,7 +323,7 @@ export default function App() {
                 </div>
               </motion.section>
 
-              {/* Sessão 2 - Sobre mim */}
+              
               <motion.section
                 id="Sobre"
                 key="section4"
@@ -365,12 +365,11 @@ export default function App() {
                       entregar soluções completas e escaláveis no front-end.
                     </p>
                   </div>
-                  {/* Brilho animado */}
-                  <span className="shine" />
+                 
                 </section>
               </motion.section>
 
-              {/* Sessão 3 - Projetos */}
+              
               <motion.section
                 id="Projetos"
                 key="section3"
@@ -436,7 +435,7 @@ export default function App() {
                         <p className="mt-2 text-sm">{project.teaser}</p>
                         <div className="flex gap-4 mt-4">
                           <button
-                            onClick={() => setModalProject(project)}
+                            onClick={() => setModalProject(project!)}
                             className="text-white hover:text-cyan-400 "
                           >
                             Descrição
