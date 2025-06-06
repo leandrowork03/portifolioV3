@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap");
 
 body {
   background-color: black;
@@ -78,7 +78,7 @@ body {
   overflow: hidden;
   border-right: 2px solid #86ff04;
   width: 0;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   flex-wrap: wrap;
   animation: typing 3s steps(30, end) forwards;
 }
@@ -87,19 +87,17 @@ body {
   animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
-
- 
-
-
-
+.cont:hover{
+  box-shadow: 0 0 25px #00ffff;
+}
 
 @keyframes blink {
-  0%, 100% {
+  0%,
+  100% {
     border-color: transparent;
   }
   50% {
     border-color: #86ff04;
-   
   }
 }
 
@@ -113,7 +111,8 @@ body {
 }
 
 @keyframes pulseGlow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
     border-color: #0ff;
   }
@@ -123,19 +122,39 @@ body {
   }
 }
 
-.layer1 { opacity: 0.3; z-index: -4; }
-.layer2 { opacity: 0.5; z-index: -3; }
-.layer3 { opacity: 0.7; z-index: -2; }
-.layer4 { opacity: 1; z-index: -1; }
+.layer1 {
+  opacity: 0.3;
+  z-index: -4;
+}
+.layer2 {
+  opacity: 0.5;
+  z-index: -3;
+}
+.layer3 {
+  opacity: 0.7;
+  z-index: -2;
+}
+.layer4 {
+  opacity: 1;
+  z-index: -1;
+}
 
 @keyframes subirEstrelas {
-  from { transform: translate(0, 0); }
-  to { transform: translate(0, 100vh); }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, 100vh);
+  }
 }
 
 @keyframes zigzag {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(10px); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
 }
 .tec {
   background-color: rgb(59, 63, 63);
@@ -143,7 +162,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   border-radius: 0 35px 0 0;
   width: 130px;
   height: 150px;
@@ -155,21 +174,17 @@ body {
   font-size: 5rem;
 }
 
-
 .welcome-animation-text {
   font-size: 5rem;
-
 }
 @media (max-width: 768px) {
   .welcome-animation-text {
     font-size: 2.5rem !important;
   }
   .welcome-text {
-  
-  font-size: 11px;
+    font-size: 11px;
+  }
 }
-}
-
 
 @media (max-width: 1000px) {
   .sec1 {
@@ -191,6 +206,6 @@ body {
 }
 @media (max-width: 600px) {
   .welcome-text {
-    font-size: 1rem; 
+    font-size: 1rem;
   }
 }

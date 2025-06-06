@@ -583,7 +583,7 @@ export default function App() {
                     Contatos
                   </h1>
                   <div className="flex  gap-15">
-                    <div className=" bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-20 w-20 rounded-full">
+                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
                       <a
                         href="https://github.com/seu-usuario"
                         target="_blank"
@@ -595,7 +595,7 @@ export default function App() {
 
                       <p>GitHuB</p>
                     </div>
-                    <div className="bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-20 w-20 rounded-full">
+                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
                       <a
                         href="https://www.linkedin.com/in/leandro-santos-front-end/"
                         target="_blank"
@@ -607,7 +607,7 @@ export default function App() {
 
                       <p>Linkedin</p>
                     </div>
-                    <div className="bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-20 w-20 rounded-full">
+                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
                       <a
                         href="https://wa.me/555194089203"
                         target="_blank"
@@ -620,7 +620,7 @@ export default function App() {
                       <p>Whatsapp</p>
                     </div>
                   </div>
-                  <div className="text-center items-center font-bold text-sky-500 text-3xl mt-10">
+                  <div className=" text-center items-center font-bold text-sky-500 text-3xl mt-10">
                     <a href="https://wa.me/555194089203" target="_blank">
                       +55 51 99408-9203
                     </a>
