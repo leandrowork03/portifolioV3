@@ -533,6 +533,18 @@ export default function App() {
                         name: "Framer motion",
                         icon: "devicon-framermotion-original",
                       },
+                      {
+                        name: "React Router",
+                        icon: "devicon-reactrouter-plain colored",
+                      },
+                      {
+                        name: "Git",
+                        icon: "devicon-git-plain colored",
+                      },
+                      {
+                        name: "Github",
+                        icon: "devicon-github-original colored",
+                      },
                     ].map((skill, index) => (
                       <div
                         className="tec flex-col gap-2 text-white items-center flex"
