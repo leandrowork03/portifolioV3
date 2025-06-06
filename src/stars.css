@@ -87,12 +87,19 @@ body {
   animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
 }
 
+
+ 
+
+
+
+
 @keyframes blink {
   0%, 100% {
     border-color: transparent;
   }
   50% {
     border-color: #86ff04;
+   
   }
 }
 
