@@ -382,7 +382,7 @@ export default function App() {
                 exit="exit"
                 viewport={{ once: true }}
               >
-                <div className="max-w-6xl w-full">
+                <div className=" max-w-6xl w-full gap-20">
                   <h2
                     className="text-4xl font-bold text-sky-400 mb-10"
                     style={{ fontFamily: "Orbitron, sans-serif" }}
@@ -454,7 +454,13 @@ export default function App() {
                       </div>
                     ))}
                   </div>
+                   <div className="w-full py-20"> 
+                    <a href="https://github.com/leandrowork03" 
+                    target="_blank"
+                    className="w-full bg-black/70 border border-cyan-500 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">veja mais projetos no meu github</a>
+                   </div>
                 </div>
+                 
 
                 {modalProject && (
                   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
