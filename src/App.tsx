@@ -48,6 +48,7 @@ const child = {
   },
 };
 
+
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -73,6 +74,7 @@ type Project = {
 export default function App() {
   const [modalProject, setModalProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+  
   const [showText, setShowText] = useState(true);
   const [showWelcome, setShowWelcome] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -141,7 +143,7 @@ export default function App() {
             exit={{ opacity: 0 }}
           >
             <div className="m-0">
-              <header className="bg-sky-400 fixed w-full top-0 z-20">
+              <header className="bg-sky-400 fixed w-full  px-5 top-0 z-20">
                 <nav className="mx-auto flex items-center justify-between p-4 ">
                   <h2
                     className="text-xl"
@@ -166,6 +168,7 @@ export default function App() {
                       zIndex: 40,
                     }}
                   >
+                   
                     <span
                       style={{
                         display: "block",
@@ -204,6 +207,7 @@ export default function App() {
                     />
                   </button>
 
+                  
                   <AnimatePresence>
                     {menuOpen && (
                       <motion.ul
@@ -269,6 +273,7 @@ export default function App() {
 
               <StarBackground />
 
+              {/* Sessão 1 - Apresentação */}
               <motion.section
                 id="home"
                 key="section1"
@@ -318,6 +323,7 @@ export default function App() {
                 </div>
               </motion.section>
 
+              {/* Sessão 2 - Sobre mim */}
               <motion.section
                 id="Sobre"
                 key="section4"
@@ -359,9 +365,12 @@ export default function App() {
                       entregar soluções completas e escaláveis no front-end.
                     </p>
                   </div>
+                  {/* Brilho animado */}
+                  <span className="shine" />
                 </section>
               </motion.section>
 
+              {/* Sessão 3 - Projetos */}
               <motion.section
                 id="Projetos"
                 key="section3"
