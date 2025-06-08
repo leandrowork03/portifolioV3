@@ -173,6 +173,9 @@ body {
   color: #00ffff;
   font-size: 5rem;
 }
+.git{
+  width: 500px;
+}
 
 .welcome-animation-text {
   font-size: 5rem;

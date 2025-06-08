@@ -455,9 +455,19 @@ export default function App() {
                     ))}
                   </div>
                    <div className="w-full py-20"> 
-                    <a href="https://github.com/leandrowork03" 
-                    target="_blank"
-                    className="w-full bg-black/70 border border-cyan-500 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300">veja mais projetos no meu github</a>
+               <a 
+  href="https://github.com/leandrowork03" 
+  target="_blank"
+  className="w-full sm:w-fit bg-black/70 border border-cyan-500 
+             rounded-2xl sm:rounded-lg 
+             p-6 sm:p-2 
+             text-lg sm:text-xs 
+             shadow-lg
+             text-center mx-auto block"
+>
+  veja mais projetos no meu github
+</a>
+
                    </div>
                 </div>
                  
@@ -582,7 +592,7 @@ export default function App() {
                   <h1 className="text-center text-4xl m-15 font-black text-sky-400  ">
                     Contatos
                   </h1>
-                  <div className="flex  gap-15">
+                  <div className="flex flex-col justify-center items-center sm:flex-row  gap-15">
                     <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
                       <a
                         href="https://github.com/seu-usuario"
