@@ -588,7 +588,7 @@ export default function App() {
                 animate="visible"
                 exit="exit"
               >
-                <div className="absolute mt-30 -top-0">
+                <div className=" mt-30 -top-0">
                   <h1 className="text-center text-4xl m-15 font-black text-sky-400  ">
                     Contatos
                   </h1>
@@ -631,19 +631,19 @@ export default function App() {
                     </div>
                   </div>
                   <div className=" text-center items-center font-bold text-sky-500 text-3xl mt-10">
-                    <a href="https://wa.me/555194089203" target="_blank">
-                      +55 51 99408-9203
+                    <a href="https://wa.me/5551982126888" target="_blank">
+                      +55 51 98212-6888
                     </a>
                   </div>
                 </div>
               </motion.section>
+            </div>
               <footer className="bg-sky-900 text-white p-2 text-center">
                 <p className="text-sm">
                   &copy; {new Date().getFullYear()} Leandro. Todos os direitos
                   reservados.
                 </p>
               </footer>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
