@@ -4,7 +4,7 @@ Bem-vindo ao meu portfólio pessoal! Desenvolvido com React, Framer Motion e Sup
 
 ---
 
-## 🚀 Tecnologias
+## 🚀 Tecnologias 
 
 - **React** com TypeScript
 - **Framer Motion** para animações suaves
