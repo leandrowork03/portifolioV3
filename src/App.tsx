@@ -428,7 +428,7 @@ export default function App() {
                           )}
                         </div>
                         <p className="mt-2 text-sm">{project.teaser}</p>
-                        <div className="flex gap-4 mt-4">
+                        <div className="flex justify-between mt-4">
                           <button
                             onClick={() => setModalProject(project!)}
                             className= "bg-cyan-500 text-white font-black p-1 px-2 rounded-2xl hover:text-cyan-500 hover:bg-white"
@@ -437,11 +437,11 @@ export default function App() {
                           </button>
                           <a
                             href={project.link}
-                            className="text-cyan-300"
+                            className= "bg-white text-cyan-500 font-black p-1 px-2 rounded-2xl hover:text-white hover:bg-cyan-500"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Ver Projeto →
+                            Deploy →
                           </a>
                         </div>
                       </div>
