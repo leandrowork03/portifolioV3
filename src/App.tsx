@@ -11,7 +11,7 @@ import animeZ from "./assets/cap1.png";
 import deep2 from "./assets/deep.png";
 import cap2 from "./assets/cap2.png";
 import ovini from "./assets/ovini.png";
-import cap3 from './assets/cap3.png'
+import cap3 from "./assets/cap3.png";
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
@@ -49,7 +49,6 @@ const child = {
   },
 };
 
-
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
   visible: {
@@ -75,7 +74,7 @@ type Project = {
 export default function App() {
   const [modalProject, setModalProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   const [showText, setShowText] = useState(true);
   const [showWelcome, setShowWelcome] = useState(false);
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -169,7 +168,6 @@ export default function App() {
                       zIndex: 40,
                     }}
                   >
-                   
                     <span
                       style={{
                         display: "block",
@@ -208,7 +206,6 @@ export default function App() {
                     />
                   </button>
 
-                  
                   <AnimatePresence>
                     {menuOpen && (
                       <motion.ul
@@ -274,7 +271,6 @@ export default function App() {
 
               <StarBackground />
 
- 
               <motion.section
                 id="home"
                 key="section1"
@@ -324,7 +320,6 @@ export default function App() {
                 </div>
               </motion.section>
 
-              
               <motion.section
                 id="Sobre"
                 key="section4"
@@ -366,11 +361,9 @@ export default function App() {
                       entregar soluções completas e escaláveis no front-end.
                     </p>
                   </div>
-                 
                 </section>
               </motion.section>
 
-              
               <motion.section
                 id="Projetos"
                 key="section3"
@@ -397,7 +390,7 @@ export default function App() {
                         teaser:
                           "Template moderno em React + TypeScript usando Vite...",
                         description:
-                          "Aplicação web para fãs de animes, com login seguro via Firebase, busca de animes, sistema de favoritos e perfil de usuário personalizável (com avatar e biografia). Desenvolvido em React + TypeScript, estilizado com Tailwind CSS e com autenticação e banco de dados em Firebase. O projeto também inclui rotas protegidas, validação com Zod e React Hook Form, estado global com Context API e design responsivo.",
+                          "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
                         link: "https://animehypez.netlify.app/",
                       },
                       {
@@ -406,7 +399,7 @@ export default function App() {
                         teaser:
                           "Projeto simples em React + TypeScript que consome a API...",
                         description:
-                          "Explorador de personagens do universo Rick and Morty com React + TypeScript. Utiliza a API pública para listar personagens, com paginação, filtragem e design responsivo. Ideal para treinar consumo de APIs REST.",
+                          "O Rick and Morty Explorer é uma aplicação web desenvolvida com React.js que consome a API pública da série Rick and Morty para exibir informações dos personagens em tempo real. Utilizando o método nativo fetch para realizar as requisições HTTP, a aplicação busca os dados da API e renderiza dinamicamente as informações na tela. O layout foi construído com Tailwind CSS, oferecendo uma interface moderna, limpa e responsiva. A aplicação segue a arquitetura baseada em componentes reutilizáveis do React e foi publicada na Netlify para acesso rápido. Este projeto teve como objetivo praticar o consumo de APIs REST usando fetch, organização de componentes e estilização com Tailwind CSS.",
                         link: "https://rickandmorrty.netlify.app/",
                       },
                       {
@@ -415,7 +408,7 @@ export default function App() {
                         teaser:
                           "Dashboard com cálculo de saldo, receitas e despesas.",
                         description:
-                          "Sistema financeiro em JavaScript puro com localStorage. Permite adicionar, excluir e listar transações financeiras. Cálculo automático de saldo, receitas e despesas com layout limpo e responsivo.",
+                          "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
                         link: "https://controle-de-gastosf.netlify.app/",
                       },
                     ].map((project, index) => (
@@ -438,7 +431,7 @@ export default function App() {
                         <div className="flex gap-4 mt-4">
                           <button
                             onClick={() => setModalProject(project!)}
-                            className="text-white hover:text-cyan-400 "
+                            className= "bg-cyan-500 text-white font-black p-1 px-2 rounded-2xl hover:text-cyan-500 hover:bg-white"
                           >
                             Descrição
                           </button>
@@ -454,23 +447,21 @@ export default function App() {
                       </div>
                     ))}
                   </div>
-                   <div className="w-full py-20"> 
-               <a 
-  href="https://github.com/leandrowork03" 
-  target="_blank"
-  className="w-full sm:w-fit bg-black/70 border border-cyan-500 
+                  <div className="w-full py-20">
+                    <a
+                      href="https://github.com/leandrowork03"
+                      target="_blank"
+                      className="w-full sm:w-fit bg-black/70 border border-cyan-500 
              rounded-2xl sm:rounded-lg 
              p-6 sm:p-2 
              text-lg sm:text-xs 
              shadow-lg
              text-center mx-auto block"
->
-  veja mais projetos no meu github
-</a>
-
-                   </div>
+                    >
+                      veja mais projetos no meu github
+                    </a>
+                  </div>
                 </div>
-                 
 
                 {modalProject && (
                   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-4">
@@ -638,12 +629,12 @@ export default function App() {
                 </div>
               </motion.section>
             </div>
-              <footer className="bg-sky-900 text-white p-2 text-center">
-                <p className="text-sm">
-                  &copy; {new Date().getFullYear()} Leandro. Todos os direitos
-                  reservados.
-                </p>
-              </footer>
+            <footer className="bg-sky-900 text-white p-2 text-center">
+              <p className="text-sm">
+                &copy; {new Date().getFullYear()} Leandro. Todos os direitos
+                reservados.
+              </p>
+            </footer>
           </motion.div>
         )}
       </AnimatePresence>
