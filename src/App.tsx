@@ -12,6 +12,7 @@ import deep2 from "./assets/deep.png";
 import cap2 from "./assets/cap2.png";
 import ovini from "./assets/ovini.png";
 import cap3 from "./assets/cap3.png";
+import cap4 from './assets/fut.png'
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
@@ -393,6 +394,24 @@ export default function App() {
                           "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
                         link: "https://animehypez.netlify.app/",
                       },
+                         {
+                        title: "Painel Financeiro",
+                        image: cap3,
+                        teaser:
+                          "Dashboard com cálculo de saldo, receitas e despesas.",
+                        description:
+                          "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
+                        link: "https://controle-de-gastosf.netlify.app/",
+                      },
+                        {
+                        title: "LeagueBoard FullStack",
+                        image: cap4,
+                        teaser:
+                          "Meu primeiro projeto FullStack integrando front-end e back-end",
+                        description: "Este projeto foi desenvolvido utilizando React no front-end, com foco em componentização, performance e experiência do usuário. A autenticação de usuários foi implementada com Firebase Authentication, garantindo segurança e integração direta com o back-end baseado no Firebase. Os dados do usuário são armazenados e gerenciados em tempo real com o Firebase Firestore, permitindo sincronização eficiente e escalável. Para os formulários, foi utilizado React Hook Form em conjunto com a biblioteca Zod para realizar validações robustas e eficientes de forma declarativa. As mensagens de feedback e notificações ao usuário foram tratadas com React Toastify, proporcionando uma comunicação clara e amigável dentro da aplicação. O gerenciamento global de estado, especialmente para controle de autenticação, foi feito com a Context API do React, garantindo que as informações do usuário estejam disponíveis em toda a aplicação de forma segura e organizada. Além disso, foi utilizado React Router DOM para a navegação entre páginas e rotas protegidas, garantindo uma experiência de navegação fluida e segura. A estilização foi feita com CSS Modules, permitindo escopo local de estilos e melhor manutenção do código. Também foi implementado o uso de LocalStorage para persistência de dados importantes mesmo após o fechamento do navegador, melhorando a usabilidade do sistema. Este projeto reflete minha capacidade de trabalhar com tecnologias modernas do ecossistema React, integrando front-end e back-end de forma coesa e escalável.",
+
+                        link: "https://league-board-rho.vercel.app/",
+                      },
                       {
                         title: "Rick and Morty Explorer",
                         image: cap2,
@@ -402,15 +421,7 @@ export default function App() {
                           "O Rick and Morty Explorer é uma aplicação web desenvolvida com React.js que consome a API pública da série Rick and Morty para exibir informações dos personagens em tempo real. Utilizando o método nativo fetch para realizar as requisições HTTP, a aplicação busca os dados da API e renderiza dinamicamente as informações na tela. O layout foi construído com Tailwind CSS, oferecendo uma interface moderna, limpa e responsiva. A aplicação segue a arquitetura baseada em componentes reutilizáveis do React e foi publicada na Netlify para acesso rápido. Este projeto teve como objetivo praticar o consumo de APIs REST usando fetch, organização de componentes e estilização com Tailwind CSS.",
                         link: "https://rickandmorrty.netlify.app/",
                       },
-                      {
-                        title: "Painel Financeiro",
-                        image: cap3,
-                        teaser:
-                          "Dashboard com cálculo de saldo, receitas e despesas.",
-                        description:
-                          "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
-                        link: "https://controle-de-gastosf.netlify.app/",
-                      },
+                   
                     ].map((project, index) => (
                       <div
                         key={index}
