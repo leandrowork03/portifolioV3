@@ -13,6 +13,7 @@ import cap2 from "./assets/cap2.png";
 import ovini from "./assets/ovini.png";
 import cap3 from "./assets/cap3.png";
 import cap4 from './assets/fut.png'
+import cap5 from './assets/LDJ.png';
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
@@ -404,11 +405,20 @@ export default function App() {
                         link: "https://controle-de-gastosf.netlify.app/",
                       },
                         {
+                        title: "Liga da Justiça",
+                        image: cap5,
+                        teaser:
+                          "Projeto desenvolvido com Next.js e React que simula uma plataforma de busca por heróis da Liga da Justiça.",
+                        description: "Projeto desenvolvido com Next.js e React que simula uma plataforma de busca por heróis da Liga da Justiça. A aplicação conta com design responsivo, animações suaves com Tailwind CSS e um sistema de busca com autocomplete adaptado para dispositivos móveis. Durante o desenvolvimento, foi necessário realizar um downgrade estratégico do Next.js 15 para a versão 14 e do React 19 para a 18, garantindo estabilidade, compatibilidade com bibliotecas e melhor controle do ambiente. O projeto entrega uma navegação fluida entre seções com transições animadas e demonstra domínio em arquitetura de aplicações modernas com foco em performance e experiência do usuário.",
+
+                        link: "https://liga-da-justica.vercel.app/",
+                      },
+                        {
                         title: "LeagueBoard FullStack",
                         image: cap4,
                         teaser:
                           "Meu primeiro projeto FullStack integrando front-end e back-end",
-                        description: "Este projeto foi desenvolvido utilizando React no front-end, com foco em componentização, performance e experiência do usuário. A autenticação de usuários foi implementada com Firebase Authentication, garantindo segurança e integração direta com o back-end baseado no Firebase. Os dados do usuário são armazenados e gerenciados em tempo real com o Firebase Firestore, permitindo sincronização eficiente e escalável. Para os formulários, foi utilizado React Hook Form em conjunto com a biblioteca Zod para realizar validações robustas e eficientes de forma declarativa. As mensagens de feedback e notificações ao usuário foram tratadas com React Toastify, proporcionando uma comunicação clara e amigável dentro da aplicação. O gerenciamento global de estado, especialmente para controle de autenticação, foi feito com a Context API do React, garantindo que as informações do usuário estejam disponíveis em toda a aplicação de forma segura e organizada. Além disso, foi utilizado React Router DOM para a navegação entre páginas e rotas protegidas, garantindo uma experiência de navegação fluida e segura. A estilização foi feita com CSS Modules, permitindo escopo local de estilos e melhor manutenção do código. Também foi implementado o uso de LocalStorage para persistência de dados importantes mesmo após o fechamento do navegador, melhorando a usabilidade do sistema. Este projeto reflete minha capacidade de trabalhar com tecnologias modernas do ecossistema React, integrando front-end e back-end de forma coesa e escalável.",
+                        description: "Projeto desenvolvido com React, com foco em performance, componentização e boa experiência do usuário. A aplicação conta com autenticação via Firebase, armazenamento em tempo real com Firestore e validações robustas com React Hook Form e Zod. Também criei uma API em Node.js para gerenciar parte dos dados, integrando front-end e back-end de forma coesa. O estado global é controlado com Context API, rotas protegidas com React Router DOM, notificações com React Toastify, estilização com CSS Modules e persistência de dados com LocalStorage.",
 
                         link: "https://league-board-rho.vercel.app/",
                       },
