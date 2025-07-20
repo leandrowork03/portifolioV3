@@ -575,6 +575,14 @@ export default function App() {
                         name: "Github",
                         icon: "devicon-github-original colored",
                       },
+                      {
+                        name: "Next JS",
+                        icon: "devicon-nextjs-plain colored",
+                      },
+                      {
+                        name: "Vercel",
+                        icon: "devicon-vercel-original colored",
+                      },
                     ].map((skill, index) => (
                       <div
                         className="tec flex-col gap-2 text-white items-center flex"
