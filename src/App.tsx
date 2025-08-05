@@ -295,49 +295,56 @@ export default function App() {
                 </div>
               </motion.section>
 
-              <motion.section
-                id="Sobre"
-                ref={refSobre}
-                initial="hidden"
-                animate={inViewSobre ? "visible" : "hidden"}
-                variants={animationVariants}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="container mx-auto px-4 py-10 w-screen min-h-screen relative overflow-hidden flex items-center justify-center bg-black/70"
-              >
-                <motion.img
-                  src={astro}
-                  alt="Nave flutuante"
-                  className="absolute w-[100px] z-0"
-                  style={{ top: "30%", right: "20%" }}
-                  animate={{ x: ["50px", "100px", "50px"] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 15,
-                    ease: "easeInOut",
-                  }}
-                />
-                <section className="relative w-full max-w-4xl flex items-center gap-15 bg-black/80 p-6 rounded-xl border-b-4 border-cyan-400 overflow-hidden">
-                  <div className="z-10">
-                    <h1
-                      className="text-2xl mb-5"
-                      style={{ fontFamily: "Orbitron, sans-serif" }}
-                    >
-                      Sobre mim
-                    </h1>
-                    <p style={{ fontFamily: "Orbitron, sans-serif" }}>
-                      Sou um desenvolvedor front-end com domínio em React e
-                      TypeScript, especializado em construir interfaces
-                      modernas, responsivas e com ótima experiência de usuário.
-                      Trabalho com ferramentas como Tailwind CSS, React Hook
-                      Form, Zod, Context API e Firebase, sempre com foco em
-                      código limpo, validações robustas e segurança. Tenho
-                      familiaridade com roteamento, controle de estado global e
-                      design responsivo, e estou em constante evolução para
-                      entregar soluções completas e escaláveis no front-end.
-                    </p>
-                  </div>
-                </section>
-              </motion.section>
+             <motion.section
+  id="Sobre"
+  ref={refSobre}
+  initial="hidden"
+  animate={inViewSobre ? "visible" : "hidden"}
+  variants={animationVariants}
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="container mx-auto px-4 py-10 w-screen min-h-screen relative overflow-hidden flex items-center justify-center bg-black/70"
+>
+  {/* Fundo animado com o astro */}
+  <motion.img
+    src={astro}
+    alt="Nave flutuante"
+    className="absolute w-[100px] z-0"
+    style={{ top: "30%", right: "20%" }}
+    animate={{ x: ["50px", "100px", "50px"] }}
+    transition={{
+      repeat: Infinity,
+      duration: 15,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* Contêiner do texto, centralizado e com as melhorias de estilo */}
+  <div className="relative w-full max-w-4xl p-6 md:p-12 bg-black/80 rounded-2xl border-b-4 border-cyan-400 shadow-xl shadow-cyan-400/20 text-center">
+    
+    <motion.h1
+      className="text-4xl sm:text-5xl font-bold text-sky-400 mb-5"
+      style={{ fontFamily: "Orbitron, sans-serif" }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      Sobre mim
+    </motion.h1>
+    <motion.p
+      className="text-lg text-gray-300"
+      style={{ fontFamily: "Orbitron, sans-serif" }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+    >
+      Sou Leandro, um desenvolvedor front-end de Cachoeirinha, RS, apaixonado por transformar ideias em interfaces digitais de alta performance. Com um domínio sólido em React e TypeScript, construo soluções visuais que não apenas encantam, mas também oferecem uma experiência de usuário impecável e segura.
+
+      Minha stack inclui ferramentas modernas como Next.js, Tailwind CSS, Context API e GraphQL, que utilizo para criar aplicações completas e escaláveis. Adoro o desafio de construir projetos como meu primeiro full-stack e dominar a autenticação de usuários com Firebase e validações robustas com Zod, sempre com foco em código limpo e arquitetura de componentes reutilizáveis.
+
+      Estou em constante evolução e pronto para integrar equipes que valorizam a inovação e a entrega de valor.
+    </motion.p>
+  </div>
+</motion.section>
 
               <motion.section
                 id="Projetos"
