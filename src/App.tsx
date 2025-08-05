@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ArrowUpRightIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
 import StarBackground from "./StarBackground";
 import CustomCursor from "./CustomCursor";
 import "./stars.css";
@@ -7,17 +9,14 @@ import pc from "./assets/pc.png";
 import devLeandro from "./assets/184451565.jpg";
 import astro from "./assets/astro.png";
 import deep from "./assets/lua-cheia-10190448164475-removebg-preview.png";
-import animeZ from "./assets/cap1.png";
 import deep2 from "./assets/deep.png";
-import cap2 from "./assets/cap2.png";
 import ovini from "./assets/ovini.png";
-import cap3 from "./assets/cap3.png";
-import cap4 from './assets/fut.png'
-import cap5 from './assets/LDJ.png';
+import { projectsData } from "./data/projects";
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
-const container = {
+// Variantes para a animação do texto digitado
+const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -28,41 +27,31 @@ const container = {
     },
   },
   exit: {
+    x: "-100%",
     opacity: 0,
-    transition: {
-      staggerChildren: 0.1,
-      staggerDirection: 1,
-      delayChildren: 0,
-    },
+    transition: { duration: 0.8, ease: "easeInOut" },
   },
 };
 
-const child = {
+const childVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { type: "tween", ease: "easeOut", duration: 0.5 },
   },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: { type: "tween", ease: "easeIn", duration: 0.5 },
-  },
 };
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
-  },
-  exit: {
-    opacity: 0,
-    y: -30,
-    transition: { duration: 0.5, ease: "easeIn" },
-  },
+// Variantes de animação para o portfólio (entrada com slide)
+const portfolioVariants = {
+  initial: { x: "100%", opacity: 0 },
+  animate: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } }
+};
+
+// Variantes para as seções do portfólio (entrada com fade e slide)
+const animationVariants = {
+  hidden: { opacity: 0, y: 100 },
+  visible: { opacity: 1, y: 0 }
 };
 
 type Project = {
@@ -76,31 +65,13 @@ type Project = {
 export default function App() {
   const [modalProject, setModalProject] = useState<Project | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const [showText, setShowText] = useState(true);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [showPortfolio, setShowPortfolio] = useState(false);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
-    if (!showText) {
-      const timer = setTimeout(() => setShowWelcome(true), 500);
-      return () => clearTimeout(timer);
-    }
-  }, [showText]);
-
-  useEffect(() => {
-    if (showWelcome) {
-      const timer = setTimeout(() => setShowWelcome(false), 3000);
-      return () => clearTimeout(timer);
-    }
-  }, [showWelcome]);
-
-  useEffect(() => {
-    if (!showWelcome && !showText) {
-      const timer = setTimeout(() => setShowPortfolio(true), 300);
-      return () => clearTimeout(timer);
-    }
-  }, [showWelcome, showText]);
+    // Aumentamos o tempo para 3 segundos para que a digitação seja visível
+    const timer = setTimeout(() => setShowWelcome(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleScrollTo = (id: string) => {
     const section = document.getElementById(id);
@@ -110,24 +81,28 @@ export default function App() {
     }
   };
 
+  const createInViewHook = () => useInView({ threshold: 0.1 });
+  const [refHome, inViewHome] = createInViewHook();
+  const [refSobre, inViewSobre] = createInViewHook();
+  const [refProjetos, inViewProjetos] = createInViewHook();
+  const [refHabilidades, inViewHabilidades] = createInViewHook();
+  const [refContato, inViewContato] = createInViewHook();
+
   return (
     <div className="h-screen bg-black flex justify-center items-center flex-col relative overflow-hidden">
       <CustomCursor />
       <AnimatePresence mode="wait">
-        {showText && (
+        {showWelcome && (
           <motion.div
-            key="text"
-            className="welcome-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white text-center"
-            variants={container}
+            key="welcome"
+            className="welcome-text text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white text-center absolute inset-0 flex justify-center items-center"
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            onAnimationComplete={() => {
-              setTimeout(() => setShowText(false), 3000);
-            }}
           >
             {sentence.split("").map((char, index) => (
-              <motion.span key={char + "-" + index} variants={child}>
+              <motion.span key={char + "-" + index} variants={childVariants}>
                 {char === " " ? "\u00A0" : char}
               </motion.span>
             ))}
@@ -136,16 +111,16 @@ export default function App() {
       </AnimatePresence>
 
       <AnimatePresence>
-        {showPortfolio && (
+        {!showWelcome && (
           <motion.div
             key="portfolio"
             className="text-white w-full h-full z-10 overflow-x-hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            variants={portfolioVariants}
+            initial="initial"
+            animate="animate"
           >
             <div className="m-0">
-              <header className="bg-sky-400 fixed w-full  px-5 top-0 z-20">
+              <header className="bg-sky-400 fixed w-full px-5 top-0 z-20">
                 <nav className="mx-auto flex items-center justify-between p-4 ">
                   <h2
                     className="text-xl"
@@ -218,7 +193,6 @@ export default function App() {
                         style={{
                           listStyle: "none",
                           margin: 0,
-
                           padding: "10px 0 500px",
                           position: "absolute",
                           top: "100%",
@@ -275,13 +249,12 @@ export default function App() {
 
               <motion.section
                 id="home"
-                key="section1"
-                className="w-screen min-h-screen bg-center relative bg-no-repeat flex items-center justify-between px-10 pt-20"
-                variants={sectionVariants}
+                ref={refHome}
                 initial="hidden"
-                whileInView="visible"
-                exit="exit"
-                viewport={{ once: true }}
+                animate={inViewHome ? "visible" : "hidden"}
+                variants={animationVariants}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="container mx-auto px-4 py-10 w-screen min-h-screen bg-center relative bg-no-repeat flex items-center justify-between pt-20"
               >
                 <motion.img
                   src={pc}
@@ -324,12 +297,12 @@ export default function App() {
 
               <motion.section
                 id="Sobre"
-                key="section4"
-                className="w-screen min-h-screen relative overflow-hidden flex items-center justify-center bg-black/70"
-                variants={sectionVariants}
+                ref={refSobre}
                 initial="hidden"
-                animate="visible"
-                exit="exit"
+                animate={inViewSobre ? "visible" : "hidden"}
+                variants={animationVariants}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="container mx-auto px-4 py-10 w-screen min-h-screen relative overflow-hidden flex items-center justify-center bg-black/70"
               >
                 <motion.img
                   src={astro}
@@ -368,14 +341,13 @@ export default function App() {
 
               <motion.section
                 id="Projetos"
-                key="section3"
-                className="w-screen min-h-screen bg-left bg-no-repeat flex items-center justify-center pt-20 px-10"
-                style={{ backgroundImage: `url(${deep})` }}
-                variants={sectionVariants}
+                ref={refProjetos}
                 initial="hidden"
-                whileInView="visible"
-                exit="exit"
-                viewport={{ once: true }}
+                animate={inViewProjetos ? "visible" : "hidden"}
+                variants={animationVariants}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="container mx-auto px-4 py-10 w-screen min-h-screen bg-left bg-no-repeat flex items-center justify-center pt-20"
+                style={{ backgroundImage: `url(${deep})` }}
               >
                 <div className=" max-w-6xl w-full gap-20">
                   <h2
@@ -384,104 +356,47 @@ export default function App() {
                   >
                     Projetos em Destaque
                   </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    {[
-                      {
-                        title: "Anime hype Z",
-                        image: animeZ,
-                        teaser:
-                          "Template moderno em React + TypeScript usando Vite...",
-                        description:
-                          "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
-                        link: "https://animehypez.netlify.app/",
-                      },
-                         {
-                        title: "Painel Financeiro",
-                        image: cap3,
-                        teaser:
-                          "Dashboard com cálculo de saldo, receitas e despesas.",
-                        description:
-                          "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
-                        link: "https://controle-de-gastosf.netlify.app/",
-                      },
-                        {
-                        title: "Liga da Justiça",
-                        image: cap5,
-                        teaser:
-                          "Projeto desenvolvido com Next.js e React que simula uma plataforma de busca por heróis da Liga da Justiça.",
-                        description: "Projeto desenvolvido com Next.js e React que simula uma plataforma de busca por heróis da Liga da Justiça. A aplicação conta com design responsivo, animações suaves com Tailwind CSS e um sistema de busca com autocomplete adaptado para dispositivos móveis. Durante o desenvolvimento, foi necessário realizar um downgrade estratégico do Next.js 15 para a versão 14 e do React 19 para a 18, garantindo estabilidade, compatibilidade com bibliotecas e melhor controle do ambiente. O projeto entrega uma navegação fluida entre seções com transições animadas e demonstra domínio em arquitetura de aplicações modernas com foco em performance e experiência do usuário.",
-
-                        link: "https://liga-da-justica.vercel.app/",
-                      },
-                        {
-                        title: "LeagueBoard FullStack",
-                        image: cap4,
-                        teaser:
-                          "Meu primeiro projeto FullStack integrando front-end e back-end",
-                        description: "Projeto desenvolvido com React, com foco em performance, componentização e boa experiência do usuário. A aplicação conta com autenticação via Firebase, armazenamento em tempo real com Firestore e validações robustas com React Hook Form e Zod. Também criei uma API em Node.js para gerenciar parte dos dados, integrando front-end e back-end de forma coesa. O estado global é controlado com Context API, rotas protegidas com React Router DOM, notificações com React Toastify, estilização com CSS Modules e persistência de dados com LocalStorage.",
-
-                        link: "https://league-board-rho.vercel.app/",
-                      },
-                      {
-                        title: "Rick and Morty Explorer",
-                        image: cap2,
-                        teaser:
-                          "Projeto simples em React + TypeScript que consome a API...",
-                        description:
-                          "O Rick and Morty Explorer é uma aplicação web desenvolvida com React.js que consome a API pública da série Rick and Morty para exibir informações dos personagens em tempo real. Utilizando o método nativo fetch para realizar as requisições HTTP, a aplicação busca os dados da API e renderiza dinamicamente as informações na tela. O layout foi construído com Tailwind CSS, oferecendo uma interface moderna, limpa e responsiva. A aplicação segue a arquitetura baseada em componentes reutilizáveis do React e foi publicada na Netlify para acesso rápido. Este projeto teve como objetivo praticar o consumo de APIs REST usando fetch, organização de componentes e estilização com Tailwind CSS.",
-                        link: "https://rickandmorrty.netlify.app/",
-                      },
-                   
-                    ].map((project, index) => (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {projectsData.map((project, index) => (
                       <div
                         key={index}
-                        className="bg-black/70 border border-cyan-500 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform duration-300"
+                        className="bg-black/70 border border-cyan-500 rounded-2xl p-6 shadow-lg hover:scale-105 hover:-translate-y-2 hover:shadow-cyan-400/50 transition-transform duration-300"
                       >
-                        <h3 className="text-2xl font-semibold text-cyan-400">
-                          {project.title}
-                        </h3>
-                        <div>
+                        <h3 className="text-2xl font-semibold text-cyan-400">{project.title}</h3>
+                        <div className="relative overflow-hidden rounded-md mt-2">
                           {project.image && (
                             <img
                               src={project.image}
-                              className="border border-cyan-500 rounded-2xl"
+                              className="w-full h-auto object-cover border border-cyan-500 rounded-md"
+                              alt={project.title}
                             />
                           )}
+                          <div className="absolute top-0 left-0 w-full h-full bg-black/60 opacity-0 transition-opacity duration-300 hover:opacity-80 flex items-center justify-center">
+                            <p className="text-white text-center px-4">{project.teaser}</p>
+                          </div>
                         </div>
-                        <p className="mt-2 text-sm">{project.teaser}</p>
-                        <div className="flex justify-between mt-4">
+                        <div className="flex justify-between mt-4 gap-2">
                           <button
-                            onClick={() => setModalProject(project!)}
-                            className= "bg-cyan-500 text-white font-black p-1 px-2 rounded-2xl hover:text-cyan-500 hover:bg-white"
+                            onClick={() => setModalProject(project)}
+                            className="button-fill bg-cyan-500 text-white font-black p-2 rounded-md hover:text-cyan-500 hover:bg-white flex-grow flex items-center justify-center"
                           >
+                            <InformationCircleIcon className="h-5 w-5 mr-2" />
                             Descrição
                           </button>
                           <a
                             href={project.link}
-                            className= "bg-white text-cyan-500 font-black p-1 px-2 rounded-2xl hover:text-white hover:bg-cyan-500"
+                            className="button-fill bg-white text-cyan-500 font-black p-2 rounded-md hover:text-white hover:bg-cyan-500 flex-grow text-center flex items-center justify-center"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            Deploy →
+                            Deploy
+                            <ArrowUpRightIcon className="h-5 w-5 ml-2" />
                           </a>
                         </div>
                       </div>
                     ))}
                   </div>
-                  <div className="w-full py-20">
-                    <a
-                      href="https://github.com/leandrowork03"
-                      target="_blank"
-                      className="w-full sm:w-fit bg-black/70 border border-cyan-500 
-             rounded-2xl sm:rounded-lg 
-             p-6 sm:p-2 
-             text-lg sm:text-xs 
-             shadow-lg
-             text-center mx-auto block"
-                    >
-                      veja mais projetos no meu github
-                    </a>
-                  </div>
+                 
                 </div>
 
                 {modalProject && (
@@ -507,12 +422,13 @@ export default function App() {
               </motion.section>
 
               <motion.section
-                key="section4"
-                className="w-screen relative min-h-screen overflow-hidden flex bg-black/70"
-                variants={sectionVariants}
+                id="Habilidades"
+                ref={refHabilidades}
                 initial="hidden"
-                animate="visible"
-                exit="exit"
+                animate={inViewHabilidades ? "visible" : "hidden"}
+                variants={animationVariants}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="container mx-auto px-4 py-10 w-screen relative min-h-screen overflow-hidden flex bg-black/70"
               >
                 <motion.img
                   src={ovini}
@@ -597,66 +513,57 @@ export default function App() {
                   </div>
                 </div>
               </motion.section>
-
-              <motion.section
-                id="Contato"
-                key="section4"
-                className="w-screen bg-cover min-h-screen relative overflow-hidden flex items-center justify-center"
-                style={{ backgroundImage: `url(${deep2})` }}
-                variants={sectionVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <div className=" mt-30 -top-0">
-                  <h1 className="text-center text-4xl m-15 font-black text-sky-400  ">
-                    Contatos
-                  </h1>
-                  <div className="flex flex-col justify-center items-center sm:flex-row  gap-15">
-                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
-                      <a
-                        href="https://github.com/seu-usuario"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sky-400 text-3xl"
-                      >
-                        <i className="devicon-github-original"></i>
-                      </a>
-
-                      <p>GitHuB</p>
-                    </div>
-                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
-                      <a
-                        href="https://www.linkedin.com/in/leandro-santos-front-end/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sky-400 text-3xl"
-                      >
-                        <i className="devicon-linkedin-plain"></i>
-                      </a>
-
-                      <p>Linkedin</p>
-                    </div>
-                    <div className="cont bg-zinc-600 text-sky-400 flex flex-col items-center justify-center h-25 w-25 rounded-full">
-                      <a
-                        href="https://wa.me/555194089203"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sky-400 text-3xl"
-                      >
-                        <i className="fa-brands fa-whatsapp"></i>
-                      </a>
-
-                      <p>Whatsapp</p>
-                    </div>
-                  </div>
-                  <div className=" text-center items-center font-bold text-sky-500 text-3xl mt-10">
-                    <a href="https://wa.me/5551982126888" target="_blank">
-                      +55 51 98212-6888
-                    </a>
-                  </div>
-                </div>
-              </motion.section>
+<motion.section
+  id="Contato"
+  ref={refContato}
+  initial="hidden"
+  animate={inViewContato ? "visible" : "hidden"}
+  variants={animationVariants}
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="container mx-auto px-4 py-10 w-screen bg-cover min-h-screen relative overflow-hidden flex items-center justify-center"
+  style={{ backgroundImage: `url(${deep2})` }}
+>
+  <div className="mt-30 -top-1 w-full max-w-4xl p-6 sm:p-12 text-center ">
+    <h1
+      className="text-center text-4xl sm:text-5xl font-black text-sky-400 mb-10"
+      style={{ fontFamily: "Orbitron, sans-serif" }}
+    >
+      Vamos conversar!
+    </h1>
+    <div className="flex flex-col sm:flex-row justify-center items-center gap-8 sm:gap-12 mb-12">
+      
+      <a
+        href="https://github.com/leandrowork03"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-card group"
+      >
+        <i className="devicon-github-original colored text-5xl group-hover:text-cyan-400 transition-colors duration-300"></i>
+        <span className="text-white mt-2 group-hover:text-cyan-400 transition-colors duration-300 text-lg font-bold">GitHub</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/leandro-santos-front-end/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-card group"
+      >
+        <i className="devicon-linkedin-plain colored text-5xl group-hover:text-cyan-400 transition-colors duration-300"></i>
+        <span className="text-white mt-2 group-hover:text-cyan-400 transition-colors duration-300 text-lg font-bold">LinkedIn</span>
+      </a>
+    </div>
+    
+    
+    <a
+      href="https://wa.me/5551982126888"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button-fill bg-green-500 text-white font-black py-4 px-8 rounded-full text-xl hover:bg-green-600 transition-colors duration-300 transform hover:scale-105 flex items-center justify-center mx-auto max-w-sm shadow-lg hover:shadow-green-500/50"
+    >
+      <i className="fa-brands fa-whatsapp text-2xl mr-4"></i>
+      +55 51 98212-6888
+    </a>
+  </div>
+</motion.section>
             </div>
             <footer className="bg-sky-900 text-white p-2 text-center">
               <p className="text-sm">

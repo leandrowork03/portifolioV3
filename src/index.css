@@ -1,1 +1,48 @@
 @import "tailwindcss";
+
+
+.button-fill {
+position: relative;
+overflow: hidden;
+}
+
+.button-fill::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(139, 233, 253, 0.2); /* Ciano mais claro e semitransparente */
+transform: translateX(-100%);
+transition: transform 0.3s ease-in-out;
+z-index: -1;
+}
+
+.button-fill:hover::before {
+transform: translateX(0);
+}
+
+/* Estilos para o overlay da imagem */
+.image-overlay-wrapper {
+position: relative;
+overflow: hidden;
+}
+
+.image-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(30, 41, 59, 0.7); /* Ciano mais escuro e semitransparente */
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.image-overlay-wrapper:hover .image-overlay {
+opacity: 1;
+}
