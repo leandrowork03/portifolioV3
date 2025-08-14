@@ -35,7 +35,7 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
       "Blog de projetos web, construído com Next.js, GraphQL e Tailwind CSS.",
     description:
       "Este blog é uma vitrine do meu trabalho como Desenvolvedor Front-End, construído com uma stack moderna e escalável. O projeto utiliza Next.js 14 (App Router) e React para a criação de interfaces dinâmicas, com TypeScript para garantir segurança e robustez no código. A arquitetura demonstra a integração com uma API GraphQL (mockada) através do Apollo Client e GraphQL Yoga, gerenciando dados de forma eficiente. O layout, estilizado com Tailwind CSS, é 100% responsivo e conta com uma galeria de projetos interativa com modais. O resultado é uma aplicação de alta performance que reflete minha paixão por design funcional e tecnologia de ponta.",
-    link: "ndrosantos.vercel.app",
+    link: "https://leandrosantos.vercel.app/",
   },
   {
     title: "LeagueBoard FullStack",
