@@ -12,7 +12,8 @@ export const projectsData = [
   {
     title: "Loja",
     image: cm,
-    teaser: "Desenvolvi uma loja virtual moderna do zero! Com Next.js, GraphQL e Context API, criei uma experiência de compra ágil e otimizada.",
+    teaser:
+      "Desenvolvi uma loja virtual moderna do zero! Com Next.js, GraphQL e Context API, criei uma experiência de compra ágil e otimizada.",
     description: `A Loja DevShop é um projeto que simula uma plataforma de e-commerce moderna e funcional. O objetivo foi criar uma aplicação robusta, com foco em uma arquitetura limpa e eficiente para a gestão de dados e estado global.
 
 O projeto utiliza Next.js (App Router) para performance e roteamento otimizado, GraphQL com Apollo Client para a busca de dados de produtos de forma declarativa, e a React Context API para o gerenciamento centralizado do estado do carrinho de compras. A interface é desenvolvida com Tailwind CSS, garantindo um design responsivo e rápido.
@@ -20,7 +21,7 @@ O projeto utiliza Next.js (App Router) para performance e roteamento otimizado, 
 Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, uma busca com sugestões em tempo real, e um sistema de carrinho completo. O projeto demonstra a capacidade de integrar diferentes tecnologias para construir uma aplicação escalável e otimizada, com foco em uma excelente experiência de usuário e boas práticas de desenvolvimento.`,
     link: "https://devshop-phi.vercel.app/",
   },
-    {
+  {
     title: "LeagueBoard FullStack",
     image: cap4,
     teaser: "Meu primeiro projeto FullStack integrando front-end e back-end",
@@ -38,15 +39,6 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
     link: "https://leandrosantos.vercel.app/",
   },
   {
-    title: "Mega man X",
-    image: m,
-    teaser: "Aplicação front-end interativa para fãs da série Mega Man X.",
-    description:
-      "O 'Mega Man X - Fan Site' é uma aplicação web interativa desenvolvida com React e TypeScript, oferecendo uma plataforma para os fãs explorarem a rica história da série. O projeto demonstra a construção de interfaces de usuário complexas e responsivas utilizando Tailwind CSS, garantindo uma experiência fluida em qualquer dispositivo. A aplicação consome uma API (simulada ou real) para exibir detalhes sobre personagens, chefes e fases, destacando a habilidade de gerenciamento de dados assíncronos e a criação de uma arquitetura de componentes reutilizáveis. Este projeto serviu como um excelente exercício para aplicar conceitos de roteamento (React Router DOM) e gerenciamento de estado, resultando em uma experiência de navegação envolvente e bem estruturada.",
-    link: "https://megaman-x-mu.vercel.app/",
-  },
-  
-  {
     title: "Anime hype Z",
     image: animeZ,
     teaser: "Template moderno em React + TypeScript usando Vite...",
@@ -54,7 +46,16 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
       "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
     link: "https://animehypez.netlify.app/",
   },
-{
+  {
+    title: "Mega man X",
+    image: m,
+    teaser: "Aplicação front-end interativa para fãs da série Mega Man X.",
+    description:
+      "O 'Mega Man X - Fan Site' é uma aplicação web interativa desenvolvida com React e TypeScript, oferecendo uma plataforma para os fãs explorarem a rica história da série. O projeto demonstra a construção de interfaces de usuário complexas e responsivas utilizando Tailwind CSS, garantindo uma experiência fluida em qualquer dispositivo. A aplicação consome uma API (simulada ou real) para exibir detalhes sobre personagens, chefes e fases, destacando a habilidade de gerenciamento de dados assíncronos e a criação de uma arquitetura de componentes reutilizáveis. Este projeto serviu como um excelente exercício para aplicar conceitos de roteamento (React Router DOM) e gerenciamento de estado, resultando em uma experiência de navegação envolvente e bem estruturada.",
+    link: "https://megaman-x-mu.vercel.app/",
+  },
+
+  {
     title: "Liga da Justiça",
     image: cap5,
     teaser:
@@ -71,7 +72,7 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
       "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
     link: "https://controle-de-gastosf.netlify.app/",
   },
-    {
+  {
     title: "Rick and Morty Explorer",
     image: cap2,
     teaser: "Projeto simples em React + TypeScript que consome a API...",
