@@ -45,8 +45,15 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
       "Projeto desenvolvido com React, com foco em performance, componentização e boa experiência do usuário. A aplicação conta com autenticação via Firebase, armazenamento em tempo real com Firestore e validações robustas com React Hook Form e Zod. Também criei uma API em Node.js para gerenciar parte dos dados, integrando front-end e back-end de forma coesa. O estado global é controlado com Context API, rotas protegidas com React Router DOM, notificações com React Toastify, estilização com CSS Modules e persistência de dados com LocalStorage.",
     link: "https://league-board-rho.vercel.app/",
   },
-
   {
+    title: "Anime hype Z",
+    image: animeZ,
+    teaser: "Template moderno em React + TypeScript usando Vite...",
+    description:
+      "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
+    link: "https://animehypez.netlify.app/",
+  },
+{
     title: "Liga da Justiça",
     image: cap5,
     teaser:
@@ -56,28 +63,19 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
     link: "https://liga-da-justica.vercel.app/",
   },
   {
-    title: "Anime hype Z",
-    image: animeZ,
-    teaser: "Template moderno em React + TypeScript usando Vite...",
-    description:
-      "O AnimeHypez é uma aplicação web desenvolvida com React.js que simula uma área de login para fãs de animes, oferecendo uma experiência moderna e responsiva. O projeto utiliza Firebase Authentication para cadastro, login e gerenciamento de sessões, com rotas protegidas implementadas através do React Router DOM. A validação de formulários é feita com Zod, garantindo que os dados de entrada estejam corretos antes de serem enviados. A interface foi construída com Tailwind CSS, proporcionando um layout limpo e adaptado para dispositivos móveis. Toda a aplicação segue o modelo de SPA (Single Page Application) e foi publicada na Netlify, com deploy contínuo. Este projeto teve como foco a prática de autenticação segura, organização de componentes reutilizáveis, roteamento condicional e validação de dados no front-end.",
-    link: "https://animehypez.netlify.app/",
-  },
-
-  {
-    title: "Rick and Morty Explorer",
-    image: cap2,
-    teaser: "Projeto simples em React + TypeScript que consome a API...",
-    description:
-      "O Rick and Morty Explorer é uma aplicação web desenvolvida com React.js que consome a API pública da série Rick and Morty para exibir informações dos personagens em tempo real. Utilizando o método nativo fetch para realizar as requisições HTTP, a aplicação busca os dados da API e renderiza dinamicamente as informações na tela. O layout foi construído com Tailwind CSS, oferecendo uma interface moderna, limpa e responsiva. A aplicação segue a arquitetura baseada em componentes reutilizáveis do React e foi publicada na Netlify para acesso rápido. Este projeto teve como objetivo praticar o consumo de APIs REST usando fetch, organização de componentes e estilização com Tailwind CSS.",
-    link: "https://rickandmorrty.netlify.app/",
-  },
-  {
     title: "Painel Financeiro",
     image: cap3,
     teaser: "Dashboard com cálculo de saldo, receitas e despesas.",
     description:
       "O Controle de Gastos é uma aplicação web desenvolvida com JavaScript puro (Vanilla JS), HTML5 e CSS3, que permite ao usuário cadastrar, visualizar e excluir transações financeiras, além de exibir automaticamente o saldo, total de receitas e despesas. O projeto utiliza LocalStorage para armazenar os dados de forma persistente no navegador, garantindo que as informações sejam mantidas mesmo após recarregar a página. A aplicação apresenta uma interface simples e intuitiva, com foco em usabilidade, e foi estruturada com boas práticas de organização de código, separando responsabilidades entre lógica, renderização e manipulação de dados. O projeto foi publicado na Netlify, permitindo acesso rápido e gratuito via navegador. O objetivo principal foi consolidar o domínio de JavaScript puro, manipulação do DOM, armazenamento local e construção de interfaces funcionais sem depender de frameworks.",
     link: "https://controle-de-gastosf.netlify.app/",
+  },
+    {
+    title: "Rick and Morty Explorer",
+    image: cap2,
+    teaser: "Projeto simples em React + TypeScript que consome a API...",
+    description:
+      "O Rick and Morty Explorer é uma aplicação web desenvolvida com React.js que consome a API pública da série Rick and Morty para exibir informações dos personagens em tempo real. Utilizando o método nativo fetch para realizar as requisições HTTP, a aplicação busca os dados da API e renderiza dinamicamente as informações na tela. O layout foi construído com Tailwind CSS, oferecendo uma interface moderna, limpa e responsiva. A aplicação segue a arquitetura baseada em componentes reutilizáveis do React e foi publicada na Netlify para acesso rápido. Este projeto teve como objetivo praticar o consumo de APIs REST usando fetch, organização de componentes e estilização com Tailwind CSS.",
+    link: "https://rickandmorrty.netlify.app/",
   },
 ];
