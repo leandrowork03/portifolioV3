@@ -20,6 +20,14 @@ O projeto utiliza Next.js (App Router) para performance e roteamento otimizado, 
 Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, uma busca com sugestões em tempo real, e um sistema de carrinho completo. O projeto demonstra a capacidade de integrar diferentes tecnologias para construir uma aplicação escalável e otimizada, com foco em uma excelente experiência de usuário e boas práticas de desenvolvimento.`,
     link: "https://devshop-phi.vercel.app/",
   },
+    {
+    title: "LeagueBoard FullStack",
+    image: cap4,
+    teaser: "Meu primeiro projeto FullStack integrando front-end e back-end",
+    description:
+      "Projeto desenvolvido com React, com foco em performance, componentização e boa experiência do usuário. A aplicação conta com autenticação via Firebase, armazenamento em tempo real com Firestore e validações robustas com React Hook Form e Zod. Também criei uma API em Node.js para gerenciar parte dos dados, integrando front-end e back-end de forma coesa. O estado global é controlado com Context API, rotas protegidas com React Router DOM, notificações com React Toastify, estilização com CSS Modules e persistência de dados com LocalStorage.",
+    link: "https://league-board-rho.vercel.app/",
+  },
   {
     title: "Mega man X",
     image: m,
@@ -36,14 +44,6 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
     description:
       "Este blog é uma vitrine do meu trabalho como Desenvolvedor Front-End, construído com uma stack moderna e escalável. O projeto utiliza Next.js 14 (App Router) e React para a criação de interfaces dinâmicas, com TypeScript para garantir segurança e robustez no código. A arquitetura demonstra a integração com uma API GraphQL (mockada) através do Apollo Client e GraphQL Yoga, gerenciando dados de forma eficiente. O layout, estilizado com Tailwind CSS, é 100% responsivo e conta com uma galeria de projetos interativa com modais. O resultado é uma aplicação de alta performance que reflete minha paixão por design funcional e tecnologia de ponta.",
     link: "https://leandrosantos.vercel.app/",
-  },
-  {
-    title: "LeagueBoard FullStack",
-    image: cap4,
-    teaser: "Meu primeiro projeto FullStack integrando front-end e back-end",
-    description:
-      "Projeto desenvolvido com React, com foco em performance, componentização e boa experiência do usuário. A aplicação conta com autenticação via Firebase, armazenamento em tempo real com Firestore e validações robustas com React Hook Form e Zod. Também criei uma API em Node.js para gerenciar parte dos dados, integrando front-end e back-end de forma coesa. O estado global é controlado com Context API, rotas protegidas com React Router DOM, notificações com React Toastify, estilização com CSS Modules e persistência de dados com LocalStorage.",
-    link: "https://league-board-rho.vercel.app/",
   },
   {
     title: "Anime hype Z",
