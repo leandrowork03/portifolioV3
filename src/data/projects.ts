@@ -29,14 +29,6 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
     link: "https://league-board-rho.vercel.app/",
   },
   {
-    title: "Mega man X",
-    image: m,
-    teaser: "Aplicação front-end interativa para fãs da série Mega Man X.",
-    description:
-      "O 'Mega Man X - Fan Site' é uma aplicação web interativa desenvolvida com React e TypeScript, oferecendo uma plataforma para os fãs explorarem a rica história da série. O projeto demonstra a construção de interfaces de usuário complexas e responsivas utilizando Tailwind CSS, garantindo uma experiência fluida em qualquer dispositivo. A aplicação consome uma API (simulada ou real) para exibir detalhes sobre personagens, chefes e fases, destacando a habilidade de gerenciamento de dados assíncronos e a criação de uma arquitetura de componentes reutilizáveis. Este projeto serviu como um excelente exercício para aplicar conceitos de roteamento (React Router DOM) e gerenciamento de estado, resultando em uma experiência de navegação envolvente e bem estruturada.",
-    link: "https://megaman-x-mu.vercel.app/",
-  },
-  {
     title: "Blog",
     image: b,
     teaser:
@@ -45,6 +37,15 @@ Entre as funcionalidades implementadas estão páginas de produtos dinâmicas, u
       "Este blog é uma vitrine do meu trabalho como Desenvolvedor Front-End, construído com uma stack moderna e escalável. O projeto utiliza Next.js 14 (App Router) e React para a criação de interfaces dinâmicas, com TypeScript para garantir segurança e robustez no código. A arquitetura demonstra a integração com uma API GraphQL (mockada) através do Apollo Client e GraphQL Yoga, gerenciando dados de forma eficiente. O layout, estilizado com Tailwind CSS, é 100% responsivo e conta com uma galeria de projetos interativa com modais. O resultado é uma aplicação de alta performance que reflete minha paixão por design funcional e tecnologia de ponta.",
     link: "https://leandrosantos.vercel.app/",
   },
+  {
+    title: "Mega man X",
+    image: m,
+    teaser: "Aplicação front-end interativa para fãs da série Mega Man X.",
+    description:
+      "O 'Mega Man X - Fan Site' é uma aplicação web interativa desenvolvida com React e TypeScript, oferecendo uma plataforma para os fãs explorarem a rica história da série. O projeto demonstra a construção de interfaces de usuário complexas e responsivas utilizando Tailwind CSS, garantindo uma experiência fluida em qualquer dispositivo. A aplicação consome uma API (simulada ou real) para exibir detalhes sobre personagens, chefes e fases, destacando a habilidade de gerenciamento de dados assíncronos e a criação de uma arquitetura de componentes reutilizáveis. Este projeto serviu como um excelente exercício para aplicar conceitos de roteamento (React Router DOM) e gerenciamento de estado, resultando em uma experiência de navegação envolvente e bem estruturada.",
+    link: "https://megaman-x-mu.vercel.app/",
+  },
+  
   {
     title: "Anime hype Z",
     image: animeZ,
