@@ -15,7 +15,6 @@ import { projectsData } from "./data/projects";
 
 const sentence = "OLÁ, BEM VINDO(A)!";
 
-// Variantes para a animação do texto digitado
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -42,13 +41,13 @@ const childVariants = {
   },
 };
 
-// Variantes de animação para o portfólio (entrada com slide)
+
 const portfolioVariants = {
   initial: { x: "100%", opacity: 0 },
   animate: { x: 0, opacity: 1, transition: { duration: 0.8, ease: "easeInOut" } }
 };
 
-// Variantes para as seções do portfólio (entrada com fade e slide)
+
 const animationVariants = {
   hidden: { opacity: 0, y: 100 },
   visible: { opacity: 1, y: 0 }
@@ -68,7 +67,7 @@ export default function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
-    // Aumentamos o tempo para 3 segundos para que a digitação seja visível
+  
     const timer = setTimeout(() => setShowWelcome(false), 3000);
     return () => clearTimeout(timer);
   }, []);
